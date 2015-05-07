@@ -10,6 +10,7 @@
 
 @implementation Doctor {
     NSMutableArray *_patientList;
+    NSMutableArray *_prescriptions;
 }
 
 - (instancetype) initWithName:(NSString *)name andSpecialization:(NSString *)specialization {
@@ -19,6 +20,7 @@
         _name = name;
         _specialization = specialization;
         _patientList = [[NSMutableArray alloc] init];
+        _prescriptions = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -47,13 +49,20 @@
 }
 
 - (NSString *) writePrescription:(NSString *)symptom {
+    NSString *prescription;
     if ([symptom isEqualTo: @"Cavity"]) {
-        return @"Sugery";
+        prescription = @"Sugery";
     } else if ([symptom isEqualTo:@"Pain"]) {
-        return @"Aspirin";
+        prescription = @"Aspirin";
     } else {
-        return @"take some rest";
+        prescription = @"take some rest";
     }
+    [_prescriptions addObject:prescription];
+    return prescription;
+}
+
+- (NSMutableArray *) getPrescriptions {
+    return _prescriptions;
 }
 
 

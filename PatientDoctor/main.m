@@ -16,6 +16,9 @@ int main(int argc, const char * argv[]) {
         Patient *patientVinny = [[Patient alloc] initWithName:@"Vinny" andHealthCard:YES andSymptom:@"Cavity"];
         Patient *patientSunny = [[Patient alloc] initWithName:@"Sunny" andHealthCard:NO andSymptom:@"Pain"];
         
+        NSMutableSet *doctorRegistry = [[NSMutableSet alloc] init];
+        [doctorRegistry addObject:doctorIan];
+        
         [patientVinny visitDocotr];
         [doctorIan selfIntro];
         [doctorIan askInfo];
