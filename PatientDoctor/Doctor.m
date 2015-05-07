@@ -42,5 +42,19 @@
     NSLog(@"Hi! My name is %@ and my specialization is %@.", self.name, self.specialization);
 }
 
+- (BOOL) verifyPatientInTheList:(Patient *)patient {
+    return [_patientList containsObject:patient];
+}
+
+- (NSString *) writePrescription:(NSString *)symptom {
+    if ([symptom isEqualTo: @"Cavity"]) {
+        return @"Sugery";
+    } else if ([symptom isEqualTo:@"Pain"]) {
+        return @"Aspirin";
+    } else {
+        return @"take some rest";
+    }
+}
+
 
 @end

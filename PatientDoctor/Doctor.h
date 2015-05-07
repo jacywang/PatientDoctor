@@ -19,5 +19,7 @@
 - (instancetype) initWithName:(NSString *)name andSpecialization:(NSString *)specialization;
 - (void) askInfo;
 - (void) selfIntro;
+- (BOOL) verifyPatientInTheList:(Patient *)patient;
+- (NSString *) writePrescription:(NSString *)symptom;
 
 @end
